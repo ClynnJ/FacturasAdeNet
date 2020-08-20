@@ -6,9 +6,9 @@ namespace FacturasAdeNet.COMMON.Entities
 {
     public class Bill:Base
     {
-        public string Id { get; set; }
         public DateTime BillDate { get; set; }
         public Client BillClient { get; set; }
         public Employee BillEmployee { get; set; }
+        public string Id { get; set; }
     }
 }

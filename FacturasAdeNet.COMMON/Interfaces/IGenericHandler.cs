@@ -5,11 +5,12 @@ using System.Text;
 
 namespace FacturasAdeNet.COMMON.Interfaces
 {
-    public interface IRepository<T> where T : Base
+    public interface IGenericHandler<T> where T:Base
     {
-        bool Create(T entity);
-        bool Edit(T modifiedEntity);
+        bool Add(T entity);
+        List<T> ToList { get; }
         bool Delete(string id);
-        List<T> Read { get; }
+        bool Edit(T entity);
+        T FindById(string id);
     }
 }

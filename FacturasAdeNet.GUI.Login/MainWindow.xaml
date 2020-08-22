@@ -1,0 +1,28 @@
+﻿<Window x:Class="FacturasAdeNet.GUI.Login.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FacturasAdeNet.GUI.Login"
+        mc:Ignorable="d"
+        Title="Facturas Ade.Net" Height="150" Width="400 ">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold">Que usuario iniciara?</TextBlock>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <Label>Usuario</Label>
+            <ComboBox x:Name="cbxUser" Width="300" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <Label>Clave</Label>
+            <TextBox x:Name="txbKey" Width="100" Margin="5"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

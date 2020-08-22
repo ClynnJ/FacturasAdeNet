@@ -1,0 +1,123 @@
+﻿<Window x:Class="FacturasAdeNet.GUI.Admin.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FacturasAdeNet.GUI.Admin"
+        mc:Ignorable="d"
+        Title="Facturas Ade.Net" Height="450" Width="800">
+    <TabControl>
+        <TabItem Header="Clientes">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <WrapPanel Grid.Column="0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <WrapPanel Grid.Row="0" Margin="10">
+                            <Button x:Name="btnNewClient" Margin="2" Padding="3">Nuevo</Button>
+                            <Button x:Name="btnEditClient" Margin="2" Padding="3">Editar</Button>
+                            <Button x:Name="btnSaveClient" Margin="2" Padding="3">Guardar</Button>
+                            <Button x:Name="btnCancelClient" Margin="2" Padding="3">Cancelar</Button>
+                            <Button x:Name="btnDeleteClient" Margin="2" Padding="3">Eliminar</Button>
+                        </WrapPanel>
+                        <WrapPanel Grid.Row="1" Margin="10">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <TextBlock Grid.Row="0" Grid.Column="0" Margin="3">Id:</TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Margin="3">Nombres</TextBlock>
+                                <TextBlock Grid.Row="2" Grid.Column="0" Margin="3">Apellidos</TextBlock>
+                                <TextBlock Grid.Row="3" Grid.Column="0" Margin="3">Cedula</TextBlock>
+                                <TextBlock Grid.Row="4" Grid.Column="0" Margin="3">Mbps</TextBlock>
+                                <TextBlock Grid.Row="5" Grid.Column="0" Margin="3">Tarifa</TextBlock>
+                                <TextBlock Grid.Row="6" Grid.Column="0" Margin="3">MAC</TextBlock>
+                                <TextBlock Grid.Row="7" Grid.Column="0" Margin="3">IP</TextBlock>
+                                <TextBlock Grid.Row="8" Grid.Column="0" Margin="3">Telefono</TextBlock>
+                                <TextBlock Grid.Row="9" Grid.Column="0" Margin="3">Pagado</TextBlock>
+
+                                <TextBlock Grid.Row="0" Grid.Column="1" x:Name="txbClientId"></TextBlock>
+                                <TextBox Grid.Row="1" Grid.Column="1" Width="200" x:Name="txbClientName" Margin="2"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" Width="200" x:Name="txbClientLastName" Margin="2"/>
+                                <TextBox Grid.Row="3" Grid.Column="1" Width="200" x:Name="txbClientDNI" Margin="2"/>
+                                <TextBox Grid.Row="4" Grid.Column="1" Width="200" x:Name="txbClientNetSpeed" Margin="2"/>
+                                <TextBox Grid.Row="5" Grid.Column="1" Width="200" x:Name="txbClientTariff" Margin="2"/>
+                                <TextBox Grid.Row="6" Grid.Column="1" Width="200" x:Name="txbClientMAC" Margin="2"/>
+                                <TextBox Grid.Row="7" Grid.Column="1" Width="200" x:Name="txbClientIP" Margin="2"/>
+                                <TextBox Grid.Row="8" Grid.Column="1" Width="200" x:Name="txbClientPhone" Margin="2"/>
+                                <CheckBox Grid.Row="9" Grid.Column="1" x:Name="chkbClientStatus" VerticalAlignment="Center" Margin="2"/>
+                            </Grid>
+                        </WrapPanel>
+                    </Grid>
+                </WrapPanel>
+                <DataGrid x:Name="dtgClients" Grid.Column="1"></DataGrid>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Empleados">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <WrapPanel Grid.Column="0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <WrapPanel Grid.Row="0" Margin="10">
+                            <Button x:Name="btnNewEmployee" Margin="2" Padding="3">Nuevo</Button>
+                            <Button x:Name="btnEditEmployee" Margin="2" Padding="3">Editar</Button>
+                            <Button x:Name="btnSaveEmployee" Margin="2" Padding="3">Guardar</Button>
+                            <Button x:Name="btnCancelEmployee" Margin="2" Padding="3">Cancelar</Button>
+                            <Button x:Name="btnDeleteEmployee" Margin="2" Padding="3">Eliminar</Button>
+                        </WrapPanel>
+                        <WrapPanel Grid.Row="1" Margin="10">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Row="0" Grid.Column="0" Margin="3">Id:</TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Margin="3">Nombre</TextBlock>
+                                <TextBlock Grid.Row="2" Grid.Column="0" Margin="3">Clave</TextBlock>
+
+                                <TextBlock Grid.Row="0" Grid.Column="1" x:Name="txbEmployeeId"></TextBlock>
+                                <TextBox Grid.Row="1" Grid.Column="1" Width="200" x:Name="txbEmployeeName" Margin="2"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" Width="200" x:Name="txbEmployeeKey" Margin="2"/>
+                                
+                            </Grid>
+                        </WrapPanel>
+                    </Grid>
+                </WrapPanel>
+                <DataGrid x:Name="dtgEmployee" Grid.Column="1"></DataGrid>
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>

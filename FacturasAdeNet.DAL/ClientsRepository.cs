@@ -29,7 +29,23 @@ namespace FacturasAdeNet.DAL
 
         public bool Create(Client entity)
         {
-            entity.Id = Guid.NewGuid().ToString();
+            while (true)
+            {
+                entity.Id = new Cid().NewCid();
+                using (var db = new LiteDatabase(DBName))
+                {
+                    var cl = db.GetCollection<Client>(TableName);
+                    if (cl.Exists(entity.Id))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        break;
+                    }
+
+                }
+            }
             try
             {
                 using(var db = new LiteDatabase(DBName))

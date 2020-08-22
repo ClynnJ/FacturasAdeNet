@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FacturasAdeNet.COMMON.Interfaces
 {
-    interface IBillsHandler:IGenericHandler<Bill>
+    public interface IBillsHandler:IGenericHandler<Bill>
     {
     }
 }

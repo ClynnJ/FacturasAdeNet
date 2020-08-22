@@ -7,17 +7,17 @@ using System.Text;
 
 namespace FacturasAdeNet.BIZ
 {
-    public class EmployeeHandler : IEmployeesHandler
+    public class BillHandler : IBillsHandler
     {
-        IRepository<Employee> repo;
+        IRepository<Bill> repo;
 
-        public EmployeeHandler(IRepository<Employee> repo)
+        public BillHandler(IRepository<Bill> repo)
         {
             this.repo = repo;
         }
-        public List<Employee> ToList => repo.Read;
+        public List<Bill> ToList => repo.Read;
 
-        public bool Add(Employee entity)
+        public bool Add(Bill entity)
         {
             return repo.Create(entity);
         }
@@ -27,14 +27,14 @@ namespace FacturasAdeNet.BIZ
             return repo.Delete(id);
         }
 
-        public bool Edit(Employee entity)
+        public bool Edit(Bill entity)
         {
             return repo.Edit(entity);
         }
 
-        public Employee FindById(string id)
+        public Bill FindById(string id)
         {
-            return ToList.Where(e => e.Id == id).SingleOrDefault(); 
+            return ToList.Where(e => e.Id == id).SingleOrDefault();
         }
     }
 }

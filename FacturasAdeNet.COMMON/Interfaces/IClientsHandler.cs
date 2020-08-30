@@ -7,7 +7,6 @@ namespace FacturasAdeNet.COMMON.Interfaces
 {
     public interface IClientsHandler : IGenericHandler<Client>
     {
-        List<Client> PaidClients();
         Client FindByDNI(string dni);
     }
 }

@@ -8,7 +8,7 @@ using System.Text;
 
 namespace FacturasAdeNet.DAL
 {
-    class ClientsRepository : IRepository<Client>
+    public class ClientsRepository : IRepository<Client>
     {
 
         private string DBName = "FacturasAdeNet.db";
@@ -29,21 +29,16 @@ namespace FacturasAdeNet.DAL
 
         public bool Create(Client entity)
         {
-            while (true)
+            using (var db = new LiteDatabase(DBName))
             {
-                entity.Id = new Cid().NewCid();
-                using (var db = new LiteDatabase(DBName))
+                while (true)
                 {
+                    entity.Id = new Cid().NewCid();
                     var cl = db.GetCollection<Client>(TableName);
-                    if (cl.Exists(entity.Id))
-                    {
-                        continue;
-                    }
-                    else
+                    if (cl.FindById(entity.Id)==null)
                     {
                         break;
                     }
-
                 }
             }
             try

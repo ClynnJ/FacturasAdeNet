@@ -8,7 +8,7 @@ namespace FacturasAdeNet.COMMON.Entities
     {
         public string NewCid()
         {
-            int[] id = new int[10];
+            int[] id = new int[6];
             var seed = Environment.TickCount;
             var random = new Random(seed);
 

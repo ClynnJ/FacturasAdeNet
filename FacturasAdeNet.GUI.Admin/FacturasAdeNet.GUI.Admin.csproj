@@ -35,8 +35,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LiteDB, Version=5.0.9.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiteDB.5.0.9\lib\net45\LiteDB.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -86,6 +90,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,6 +98,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FacturasAdeNet.BIZ\FacturasAdeNet.BIZ.csproj">
+      <Project>{6a9e9192-4f85-4c9d-9271-e20dd8dafbb5}</Project>
+      <Name>FacturasAdeNet.BIZ</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FacturasAdeNet.COMMON\FacturasAdeNet.COMMON.csproj">
+      <Project>{2b01080b-face-42f8-a8fc-bd73579ea38d}</Project>
+      <Name>FacturasAdeNet.COMMON</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FacturasAdeNet.DAL\FacturasAdeNet.DAL.csproj">
+      <Project>{2ad540bb-44e9-4904-acc4-2abf801966c5}</Project>
+      <Name>FacturasAdeNet.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FacturasAdeNet.GUI.Login.FirstTime\FacturasAdeNet.GUI.Login.FirstTime.csproj">
+      <Project>{3b2f06a8-54cd-4ccd-a984-b33cb31f135a}</Project>
+      <Name>FacturasAdeNet.GUI.Login.FirstTime</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FacturasAdeNet.GUI.Login\FacturasAdeNet.GUI.Login.csproj">
+      <Project>{de1ae694-1e17-4e20-8bcf-292ba1046155}</Project>
+      <Name>FacturasAdeNet.GUI.Login</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

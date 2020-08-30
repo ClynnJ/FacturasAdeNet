@@ -42,9 +42,6 @@ namespace FacturasAdeNet.BIZ
             return ToList.Where(e => e.Id == id).SingleOrDefault();
         }
 
-        public List<Client> PaidClients()
-        {
-            return ToList.Where(e => e.Status == 1).ToList();
-        }
+        
     }
 }

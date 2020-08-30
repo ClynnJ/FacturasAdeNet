@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FacturasAdeNet.GUI.Admin"
         mc:Ignorable="d"
-        Title="Facturas Ade.Net" Height="450" Width="800">
+        Title="Facturas Ade.Net" Height="720" Width="1080">
     <TabControl>
         <TabItem Header="Clientes">
             <Grid>
@@ -20,15 +20,16 @@
                             <RowDefinition Height="auto"/>
                         </Grid.RowDefinitions>
                         <WrapPanel Grid.Row="0" Margin="10">
-                            <Button x:Name="btnNewClient" Margin="2" Padding="3">Nuevo</Button>
-                            <Button x:Name="btnEditClient" Margin="2" Padding="3">Editar</Button>
-                            <Button x:Name="btnSaveClient" Margin="2" Padding="3">Guardar</Button>
-                            <Button x:Name="btnCancelClient" Margin="2" Padding="3">Cancelar</Button>
-                            <Button x:Name="btnDeleteClient" Margin="2" Padding="3">Eliminar</Button>
+                            <Button x:Name="btnNewClient" Margin="2" Padding="3" Click="btnNewClient_Click">Nuevo</Button>
+                            <Button x:Name="btnEditClient" Margin="2" Padding="3" Click="btnEditClient_Click">Editar</Button>
+                            <Button x:Name="btnSaveClient" Margin="2" Padding="3" Click="btnSaveClient_Click">Guardar</Button>
+                            <Button x:Name="btnCancelClient" Margin="2" Padding="3" Click="btnCancelClient_Click">Cancelar</Button>
+                            <Button x:Name="btnDeleteClient" Margin="2" Padding="3" Click="btnDeleteClient_Click">Eliminar</Button>
                         </WrapPanel>
                         <WrapPanel Grid.Row="1" Margin="10">
                             <Grid>
                                 <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="*"/>
@@ -54,23 +55,75 @@
                                 <TextBlock Grid.Row="6" Grid.Column="0" Margin="3">MAC</TextBlock>
                                 <TextBlock Grid.Row="7" Grid.Column="0" Margin="3">IP</TextBlock>
                                 <TextBlock Grid.Row="8" Grid.Column="0" Margin="3">Telefono</TextBlock>
-                                <TextBlock Grid.Row="9" Grid.Column="0" Margin="3">Pagado</TextBlock>
+                                <TextBlock Grid.Row="9" Grid.Column="0" Margin="3">Meses Pagos:</TextBlock>
 
                                 <TextBlock Grid.Row="0" Grid.Column="1" x:Name="txbClientId"></TextBlock>
-                                <TextBox Grid.Row="1" Grid.Column="1" Width="200" x:Name="txbClientName" Margin="2"/>
-                                <TextBox Grid.Row="2" Grid.Column="1" Width="200" x:Name="txbClientLastName" Margin="2"/>
-                                <TextBox Grid.Row="3" Grid.Column="1" Width="200" x:Name="txbClientDNI" Margin="2"/>
-                                <TextBox Grid.Row="4" Grid.Column="1" Width="200" x:Name="txbClientNetSpeed" Margin="2"/>
-                                <TextBox Grid.Row="5" Grid.Column="1" Width="200" x:Name="txbClientTariff" Margin="2"/>
-                                <TextBox Grid.Row="6" Grid.Column="1" Width="200" x:Name="txbClientMAC" Margin="2"/>
-                                <TextBox Grid.Row="7" Grid.Column="1" Width="200" x:Name="txbClientIP" Margin="2"/>
-                                <TextBox Grid.Row="8" Grid.Column="1" Width="200" x:Name="txbClientPhone" Margin="2"/>
-                                <CheckBox Grid.Row="9" Grid.Column="1" x:Name="chkbClientStatus" VerticalAlignment="Center" Margin="2"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Width="200" HorizontalAlignment="Left" x:Name="txbClientName" Margin="2"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" Width="200" HorizontalAlignment="Left" x:Name="txbClientLastName" Margin="2"/>
+                                <TextBox Grid.Row="3" Grid.Column="1" Width="200" HorizontalAlignment="Left" x:Name="txbClientDNI" Margin="2"/>
+                                <TextBox Grid.Row="4" Grid.Column="1" Width="50" HorizontalAlignment="Left" x:Name="txbClientNetSpeed" Margin="2"/>
+                                <TextBox Grid.Row="5" Grid.Column="1" Width="50" HorizontalAlignment="Left" x:Name="txbClientTariff" Margin="2"/>
+                                <TextBox Grid.Row="6" Grid.Column="1" Width="200" HorizontalAlignment="Left" x:Name="txbClientMAC" Margin="2"/>
+                                <TextBox Grid.Row="7" Grid.Column="1" Width="200" HorizontalAlignment="Left" x:Name="txbClientIP" Margin="2"/>
+                                <TextBox Grid.Row="8" Grid.Column="1" Width="200" HorizontalAlignment="Left" x:Name="txbClientPhone" Margin="2"/>
+                                <StackPanel Orientation="Horizontal" Grid.Row="9" Grid.Column="1">
+                                    <StackPanel Orientation="Vertical">
+                                        <Label Content="E"/>
+                                        <CheckBox x:Name="chkbClientJanuary" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical">
+                                        <Label Content="F"/>
+                                        <CheckBox x:Name="chkbClientFebruary" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical">
+                                        <Label Content="M"/>
+                                        <CheckBox x:Name="chkbClientMarch" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical">
+                                        <Label Content="A"/>
+                                        <CheckBox x:Name="chkbClientApril" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical">
+                                        <Label Content="MY"/>
+                                        <CheckBox x:Name="chkbClientMay" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical">
+                                        <Label Content="J"/>
+                                        <CheckBox x:Name="chkbClientJune" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical">
+                                        <Label Content="JL"/>
+                                        <CheckBox x:Name="chkbClientJuly" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical">
+                                        <Label Content="AG"/>
+                                        <CheckBox x:Name="chkbClientAugust" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical">
+                                        <Label Content="S"/>
+                                        <CheckBox x:Name="chkbClientSeptember" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical">
+                                        <Label Content="O"/>
+                                        <CheckBox x:Name="chkbClientOctober" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical">
+                                        <Label Content="N"/>
+                                        <CheckBox x:Name="chkbClientNovember" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical">
+                                        <Label Content="D"/>
+                                        <CheckBox x:Name="chkbClientDecember" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    
+                                    
+                                </StackPanel>
+                                
                             </Grid>
                         </WrapPanel>
                     </Grid>
                 </WrapPanel>
-                <DataGrid x:Name="dtgClients" Grid.Column="1"></DataGrid>
+                <DataGrid x:Name="dtgClients" Grid.Column="1" IsReadOnly="True"></DataGrid>
             </Grid>
         </TabItem>
         <TabItem Header="Empleados">
